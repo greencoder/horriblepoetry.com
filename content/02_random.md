@@ -1,6 +1,6 @@
-Title: This is a test
-Date: 2004-08-04T0:00:00.01
-Modified: 2004-08-04T0:00:00.01
+Title: This is a test!
+Date: 2004-08-04T0:00:00.02
+Modified: 2004-08-04T0:00:00.02
 Section: random
 Slug: random-001
 Authors: Scott Newman
