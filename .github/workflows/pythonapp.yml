@@ -22,7 +22,7 @@ jobs:
         python build.py
     - name: Deploy to gh-pages branch
       run: |
-        mkdir output
+        mkdir -p output
         python build.py
         cd output
         git init
