@@ -1,4 +1,4 @@
-Title: This is just a test!
+Title: This is just a simple test!
 Date: 2004-08-04T0:00:00.02
 Modified: 2004-08-04T0:00:00.02
 Section: random
