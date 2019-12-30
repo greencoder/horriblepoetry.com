@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ name }}{% endblock title %}
+
+{% block body_content %}
+<header>
+  <h1>{{ name }}</h1>
+  <h2>{{ description }}</h2>
+</header>
+
+<main>
+  {% for post in posts %}
+  <p>
+    <strong><a href="posts/{{ post.slug }}">{{ post.title }}</a></strong><br/>
+    Published {{ post.date }}
+  </p>
+  {% endfor %}
+</main>
+{% endblock body_content %}

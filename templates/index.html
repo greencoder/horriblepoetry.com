@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Latest stories{% endblock title %}
+
+{% block body_content %}
+<header>
+  <h1>Latest Posts</h1>
+</header>
+
+<main>
+  {% for post in posts %}
+  <p>
+    <strong><a href="posts/{{ post.slug }}.html">{{ post.title }}</a></strong><br/>
+    Section: <a href="{{ post.section }}.html">{{ post.section|find_section_name }}</a><br/>
+    Published {{ post.date }}
+  </p>
+  {% endfor %}
+</main>
+{% endblock body_content %}

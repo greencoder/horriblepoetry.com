@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+a.noline {
+  text-decoration: none;
+}
+
+h2.published {
+  font-size: 1.0em;
+  font-weight: normal;
+}
+
+section p {
+  margin: 20px 0px;
+  line-height: 1.5em;
+}
