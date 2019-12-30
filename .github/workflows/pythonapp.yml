@@ -26,6 +26,7 @@ jobs:
       run: |
         mkdir -p output
         python build.py
+        cp CNAME output/
         cd output
         git init
         git config user.name "${GITHUB_ACTOR}"
