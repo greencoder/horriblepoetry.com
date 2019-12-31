@@ -7,13 +7,13 @@
   <h1>Latest Posts</h1>
 </header>
 
-<main>
+<main class="index">
   {% for post in posts %}
-  <p>
-    <strong><a href="posts/{{ post.slug }}.html">{{ post.title }}</a></strong><br/>
-    Section: <a href="{{ post.section }}.html">{{ post.section|find_section_name }}</a><br/>
-    Published {{ post.date }}
-  </p>
+  <article>
+    <h1><a href="posts/{{ post.slug }}.html">{{ post.title }}</a></h1>
+    <h2>Section: <a href="{{ post.section }}.html">{{ post.section|find_section_name }}</a></h2>
+    <h3 class="published">Published: {{ post.date|fmt_date('MM/DD/YYYY') }}</h3>
+  </article>
   {% endfor %}
 </main>
 {% endblock body_content %}

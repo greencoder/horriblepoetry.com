@@ -1,3 +1,4 @@
+import arrow
 import glob
 import itertools
 import jinja2
@@ -94,6 +95,7 @@ if __name__ == '__main__':
 
     # Create template filters
     template_env.filters['find_section_name'] = lambda s: config.find_section_name(s)
+    template_env.filters['fmt_date'] = lambda d,fmt: arrow.get(d).format(fmt)
 
     # Load all the templates
     content_template = template_env.get_template('content.html')

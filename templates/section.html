@@ -4,16 +4,16 @@
 
 {% block body_content %}
 <header>
-  <h1>{{ name }}</h1>
-  <h2>{{ description }}</h2>
+  <h1 class="header">{{ name }}</h1>
+  <h2 class="subheader">{{ description }}</h2>
 </header>
 
-<main>
+<main class="index">
   {% for post in posts %}
-  <p>
-    <strong><a href="posts/{{ post.slug }}">{{ post.title }}</a></strong><br/>
-    Published {{ post.date }}
-  </p>
+  <article>
+    <h1><a href="posts/{{ post.slug }}.html">{{ post.title }}</a></h1>
+    <h3 class="published">Published: {{ post.date|fmt_date('MM/DD/YYYY') }}</h3>
+  </article>
   {% endfor %}
 </main>
 {% endblock body_content %}

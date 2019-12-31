@@ -4,11 +4,14 @@
     {% block extra_head %}{% endblock extra_head %}
     <title>{% block title %}Horrible Poetry{% endblock title %}</title>
     <link rel="stylesheet" href="static/styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap" />
+    <link rel="stylesheet" href="static/fonts.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /> -->
   </head>
   <body>
+    <div class="container">
     {% block body_content %}
       Body goes here
     {% endblock body_content %}
+    </div>
   </body>
 </html>

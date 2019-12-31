@@ -1,6 +1,6 @@
 Title: DynaMars Corporation Ares Station Resident Complaint Queue
-Date: 2006-11-22T0:00:00.00
-Modified: 2006-11-22T0:00:00.00
+Date: 2006-11-22T00:00:00.0+00:00
+Modified: 2006-11-22T00:00:00.0+00:00
 Section: dynamars
 Slug: dynamars-update-006
 Authors: DynaMars Corporation Information Kiosk

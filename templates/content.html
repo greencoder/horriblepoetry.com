@@ -6,14 +6,17 @@
 
 {% block body_content %}
 <header>
-  <h1><a class="noline" href="index.html">&larr; Return to Posts</a></h1>
+  <nav>
+    <a class="noline" href="index.html">&larr; Return to Posts</a>
+  </nav>
+  <h1 class="header">{{ post.title }}</h1>
+  <h2 class="subheader">{{ post.summary }}</h2>
+  <h3 class="published">
+    Published: {{ post.date|fmt_date('MM/DD/YYYY') }}{% if post.modified > post.date %}, Updated: {{ post.date|fmt_date('MM/DD/YYYY') }}{% endif %}
+  </h3>
 </header>
 
-<main>
-  <h1 class="title">{{ post.title }}</h1>
-  <h2 class="published">Published {{ post.date }}</h2>
-  <h3 class="summary">{{ post.summary }}</h3>
-
+<main class="content">
   {{ post.content|safe }}
 </main>
 {% endblock body_content %}

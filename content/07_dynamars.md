@@ -1,6 +1,6 @@
 Title: Welcome to the DynaMars Corporation's Command Queue
-Date: 2007-06-27T0:00:00.00
-Modified: 2007-06-27T0:00:00.00
+Date: 2007-06-27T00:00:00.0+00:00
+Modified: 2007-06-27T00:00:00.0+00:00
 Section: dynamars
 Slug: dynamars-update-007
 Authors: DynaMars Corporation Information Kiosk

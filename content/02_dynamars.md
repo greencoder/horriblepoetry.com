@@ -1,6 +1,6 @@
-Title: Welcome to the DynaMars Corporation's Ares Station Update Service
-Date: 2004-09-15T0:00:00.00
-Modified: 2004-09-15T0:00:00.00
+Title: Welcome to the DynaMars Corporation's Ares Station Update Service (2)
+Date: 2004-09-15T00:00:00.0+00:00
+Modified: 2004-09-15T00:00:00.0+00:00
 Section: dynamars
 Slug: dynamars-update-002
 Authors: DynaMars Corporation Information Kiosk
