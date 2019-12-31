@@ -12,6 +12,8 @@
 <main>
   <h1 class="title">{{ post.title }}</h1>
   <h2 class="published">Published {{ post.date }}</h2>
+  <h3 class="summary">{{ post.summary }}</h3>
+
   {{ post.content|safe }}
 </main>
 {% endblock body_content %}

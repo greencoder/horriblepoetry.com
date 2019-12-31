@@ -113,6 +113,10 @@ if __name__ == '__main__':
         content_output = content_template.render(content_context)
         pathlib.Path(f'output/posts/{post.slug}.html').write_text(content_output)
 
+    # Copy all the post images to the output directory
+    if pathlib.Path('content/images').exists():
+        shutil.copytree('content/images', 'output/images', copy_function=shutil.copy)
+
     # Render the section pages
     for section_context in group_posts_by_section(posts, config):
         slug = section_context.get('slug')
