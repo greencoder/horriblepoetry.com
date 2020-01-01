@@ -25,7 +25,7 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
       run: |
         mkdir -p output
-        python build.py
+        python build.py --flush
         echo 'horriblepoetry.com' > output/CNAME
         cd output
         git init

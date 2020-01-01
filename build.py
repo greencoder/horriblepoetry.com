@@ -1,3 +1,4 @@
+import argparse
 import arrow
 import glob
 import itertools
@@ -86,6 +87,11 @@ def group_posts_by_section(posts, config):
 
 if __name__ == '__main__':
 
+    # Configure command-line arguments
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('--flush', action='store_true', default=False)
+    args = argparser.parse_args()
+
     # Load the config
     config = Config.load(pathlib.Path('config.json'))
 
@@ -106,8 +112,11 @@ if __name__ == '__main__':
     posts = load_posts()
 
     # Clear out any existing output and create directory structure
-    shutil.rmtree('output')
-    pathlib.Path('output/posts').mkdir(parents=True)
+    if args.flush:
+        shutil.rmtree('output')
+        pathlib.Path('output/posts').mkdir(parents=True)
+        pathlib.Path('output/images').mkdir(parents=True)
+        pathlib.Path('output/static').mkdir(parents=True)
 
     # Render all the individual posts
     for post in posts:
@@ -117,7 +126,10 @@ if __name__ == '__main__':
 
     # Copy all the post images to the output directory
     if pathlib.Path('content/images').exists():
-        shutil.copytree('content/images', 'output/images', copy_function=shutil.copy)
+        for glob_img_filepath in glob.glob('content/images/*'):
+            src_file = pathlib.Path(glob_img_filepath)
+            dst_file = pathlib.Path('output/images') / src_file.name
+            shutil.copy(src_file, dst_file)
 
     # Render the section pages
     for section_context in group_posts_by_section(posts, config):
@@ -131,4 +143,8 @@ if __name__ == '__main__':
     pathlib.Path('output/index.html').write_text(index_output)
 
     # Copy the static folder to the output directory
-    shutil.copytree('templates/static', 'output/static', copy_function=shutil.copy)
+    if pathlib.Path('templates/static').exists():
+        for glob_static_filepath in glob.glob('templates/static/*'):
+            src_file = pathlib.Path(glob_static_filepath)
+            dst_file = pathlib.Path('output/static') / src_file.name
+            shutil.copy(src_file, dst_file)
