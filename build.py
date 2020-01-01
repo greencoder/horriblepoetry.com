@@ -111,12 +111,14 @@ if __name__ == '__main__':
     # First, load all the posts in the content directory
     posts = load_posts()
 
-    # Clear out any existing output and create directory structure
-    if args.flush:
+    # Clear out any existing output
+    if args.flush and pathlib.Path('output').exists():
         shutil.rmtree('output')
-        pathlib.Path('output/posts').mkdir(parents=True)
-        pathlib.Path('output/images').mkdir(parents=True)
-        pathlib.Path('output/static').mkdir(parents=True)
+
+    # Create the expected directory structure
+    pathlib.Path('output/posts').mkdir(parents=True)
+    pathlib.Path('output/images').mkdir(parents=True)
+    pathlib.Path('output/static').mkdir(parents=True)
 
     # Render all the individual posts
     for post in posts:
