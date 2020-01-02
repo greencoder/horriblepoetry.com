@@ -116,9 +116,9 @@ if __name__ == '__main__':
         shutil.rmtree('output')
 
     # Create the expected directory structure
-    pathlib.Path('output/posts').mkdir(parents=True)
-    pathlib.Path('output/images').mkdir(parents=True)
-    pathlib.Path('output/static').mkdir(parents=True)
+    pathlib.Path('output/posts').mkdir(exist_ok=True, parents=True)
+    pathlib.Path('output/images').mkdir(exist_ok=True, parents=True)
+    pathlib.Path('output/static').mkdir(exist_ok=True, parents=True)
 
     # Render all the individual posts
     for post in posts:
