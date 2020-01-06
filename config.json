@@ -1,16 +1,10 @@
 {
   "sections": [
     {
-      "name": "Dynamars Corporation Information Kiosk",
-      "slug": "dynamars",
+      "name": "General Posts",
+      "slug": "general",
       "order": 1,
-      "description": "Keep up to date on the DynaMars Corporation's perpetually doomed efforts to colonize Mars."
-    },
-    {
-      "name": "Random",
-      "slug": "random",
-      "order": 2,
-      "description": "Just a collection of random stuff."
+      "description": "Just a bunch of general posts"
     }
   ]
 }
